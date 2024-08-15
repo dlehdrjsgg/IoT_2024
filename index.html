@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소비기한 알리미</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <img src="https://via.placeholder.com/50" alt="앱 로고">
+            <div>
+                <h1>소비기한 알리미</h1>
+                <p>카메라로 식품을 인식하고 소비기한을 자동으로 관리 서비스</p>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="식품 검색...">
+            </div>
+        </header>
+
+        <main>
+            <section class="list-section">
+                <h2>식품 목록</h2>
+                <ul id="item-list">
+                    <script src="./js/data-look-up.js"></script>
+                </ul>
+            </section>
+
+            <section class="alert-section">
+                <h2>임박한 소비기한</h2>
+                <ul id="Deadlined-item-list">
+                    <script src="./js/check-Expiry.js"></script>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="menu-bar">
+            <button>홈</button>
+            <button>설정</button>
+        </footer>
+    </div>
+</body>
+</html>

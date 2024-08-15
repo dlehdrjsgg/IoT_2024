@@ -1,0 +1,34 @@
+{
+    "items": [
+        {
+            "barcode": "SAMPLE",
+            "deadline": "SAMPLE",
+            "productName": "SAMPLE",
+            "time": "SAMPLE"
+        },
+        {
+            "barcode": "8801121190197",
+            "deadline": "2024-08-22",
+            "productName": "허쉬초콜렛 드링크",
+            "time": "2024-08-18 01:47:13"
+        },
+        {
+            "barcode": "8801121190197",
+            "deadline": "2024-08-10",
+            "productName": "상한 허쉬초콜렛 드링크",
+            "time": "2024-08-18 01:47:13"
+        },
+        {
+            "barcode": "1234567890",
+            "deadline": "2023-12-31",
+            "productName": "샘플 상품",
+            "time": "2023-12-01 10:30:00"
+        },
+        {
+            "barcode": "9876543210",
+            "deadline": "2022-06-15",
+            "productName": "샘플 상품2",
+            "time": "2022-06-01 15:45:00"
+        }
+    ]
+}
