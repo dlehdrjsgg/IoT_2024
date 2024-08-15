@@ -1,5 +1,5 @@
-var url = 'http://127.0.0.1:5000/api/get-item-details';
-var url2 = 'http://127.0.0.1:5000/api/remove-item';
+var url = 'http://172.16.0.82:5000/api/get-item-details';
+var url2 = 'http://172.16.0.82:5000/api/remove-item';
 var requestData = {
     category: 'groceries',
     store_id: 'S123',
