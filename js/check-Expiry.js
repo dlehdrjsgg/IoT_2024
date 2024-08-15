@@ -1,4 +1,4 @@
-var url = 'http://192.168.215.2:5000/api/get-item-details';
+var url = 'http://127.0.0.1:5000/api/get-item-details';
 var requestData = {
     category: 'groceries',
     store_id: 'S123',
