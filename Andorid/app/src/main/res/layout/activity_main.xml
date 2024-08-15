@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- 상단 타이틀 -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="소비기한 알리미"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+    <!-- 냉장고 제품 섹션 -->
+
+    <!-- 제품 목록 박스 -->
+    <TextView
+        android:id="@+id/fridge_products_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="냉장고 제품"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/product_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_rectangle"
+        android:layout_below="@id/fridge_products_label"
+        android:layout_marginTop="8dp"
+        android:padding="16dp">
+
+        <!-- 첫 번째 제품 정보 -->
+        <TextView
+            android:id="@+id/product_name_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="계란"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/product_registration_date_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2024.3.1"
+            android:textSize="16sp"
+            android:layout_toRightOf="@id/product_name_1"
+            android:layout_marginStart="16dp"/>
+
+        <!-- 나머지 제품 정보들 -->
+
+        <TextView
+            android:id="@+id/product_expiry_date_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:text="2024.3.13 (D-7)"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/product_name_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="계란"
+            android:textSize="16sp"
+            android:layout_below="@id/product_name_1"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/product_registration_date_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_registration_date_1"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="11dp"
+            android:layout_toRightOf="@id/product_name_2"
+            android:text="2024.3.1"
+            android:textSize="16sp" />
+
+        <!-- 더보기 버튼 -->
+
+        <TextView
+            android:id="@+id/product_expiry_date_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_expiry_date_1"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="16dp"
+            android:text="2024.3.13 (D-7)"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/more_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="더보기"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="16sp"
+            android:layout_below="@id/product_expiry_date_2"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"/>
+    </RelativeLayout>
+
+    <!-- 하단 네비게이션 바 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:padding="16dp"
+        android:background="@android:color/darker_gray">
+
+        <TextView
+            android:id="@+id/nav_fridge_products"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="냉장고 제품"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/nav_shopping_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="쇼핑 리스트"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/nav_settings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="설정"
+            android:textSize="16sp"
+            android:gravity="center"/>
+    </LinearLayout>
+</RelativeLayout>
