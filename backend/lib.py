@@ -6,4 +6,4 @@ import json
 import time
 import datetime
 
-debug = False
+debug = True

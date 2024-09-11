@@ -28,6 +28,8 @@ def find_number_regions(image):
 def extract_number_text(roi):
     custom_config = r'--oem 3 --psm 6 -c tessedit_char_whitelist=0123456789./-'
     text = pytesseract.image_to_string(roi, config=custom_config)
+    if debug:
+        print(text.strip())
     return text.strip()
 
 def extract_numeric_date(text):
@@ -49,17 +51,20 @@ def extract_numeric_date(text):
         if match:
             date_str = match.group()
             only_digits = re.sub(r'\D', '', date_str)
-            if len(only_digits) == 8:
-                date = datetime.strptime(only_digits, '%Y%m%d').strftime('%Y-%m-%d')
-            elif len(only_digits) == 6:
-                date = datetime.strptime(only_digits, '%y%m%d').strftime('%Y-%m-%d')
-            elif len(only_digits) == 4:
-                date = datetime.strptime(only_digits, '%m%d').strftime('%Y-%m-%d')
-            else:
-                date = only_digits
-            if (datetime.now() >= datetime.strptime(date, '%Y-%m-%d') or abs(datetime.now() - datetime.strptime(date, '%Y-%m-%d')).days > 730):
+            try:
+                if len(only_digits) == 8:
+                    date = datetime.strptime(only_digits, '%Y%m%d').strftime('%Y-%m-%d')
+                elif len(only_digits) == 6:
+                    date = datetime.strptime(only_digits, '%y%m%d').strftime('%Y-%m-%d')
+                elif len(only_digits) == 4:
+                    date = datetime.strptime(only_digits, '%m%d').strftime('%Y-%m-%d')
+                else:
+                    date = only_digits
+                if (datetime.now() >= datetime.strptime(date, '%Y-%m-%d') or abs(datetime.now() - datetime.strptime(date, '%Y-%m-%d')).days > 730):
+                    return None
+                return date
+            except:
                 return None
-            return date
     return None
 
 def process_frame(frame):
